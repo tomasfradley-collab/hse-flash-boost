@@ -4,8 +4,6 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Printer, ExternalLink, CheckCircle, XCircle } from "lucide-react";
 import { useRef } from "react";
-import okImage from "@/assets/example-ok.jpg";
-import nokImage from "@/assets/example-nok.jpg";
 
 interface FlashMemoCardProps {
   topic: HSETopic;
@@ -116,11 +114,11 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
             <div class="section-title">Examples</div>
             <div class="examples">
               <div class="example">
-                <img src="${okImage}" alt="Correct Practice" />
+                <img src="${topic.okImage}" alt="Correct Practice" />
                 <div class="example-label ok-label">✓ CORRECT PRACTICE</div>
               </div>
               <div class="example">
-                <img src="${nokImage}" alt="Incorrect Practice" />
+                <img src="${topic.nokImage}" alt="Incorrect Practice" />
                 <div class="example-label nok-label">✗ UNSAFE PRACTICE</div>
               </div>
             </div>
@@ -182,7 +180,7 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
             <div className="space-y-3">
               <div className="relative rounded-lg overflow-hidden border-2 border-success shadow-card">
                 <img 
-                  src={okImage} 
+                  src={topic.okImage} 
                   alt="Correct safety practice example" 
                   className="w-full h-64 object-cover"
                 />
@@ -197,7 +195,7 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
             <div className="space-y-3">
               <div className="relative rounded-lg overflow-hidden border-2 border-destructive shadow-card">
                 <img 
-                  src={nokImage} 
+                  src={topic.nokImage} 
                   alt="Incorrect safety practice example" 
                   className="w-full h-64 object-cover"
                 />
