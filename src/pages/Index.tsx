@@ -42,7 +42,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-20 px-4">
+      <section className="relative bg-gradient-hero py-6 px-4">
         <div className="absolute inset-0 opacity-10">
           <img 
             src={heroImage} 
@@ -50,28 +50,28 @@ const Index = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">
+        <div className="relative max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
             HSE Flash Memo Generator
           </h1>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Daily safety reminders to keep your workplace safe and healthy. Generate instant flash memos on critical HSE topics.
+          <p className="text-sm text-primary-foreground/90 max-w-2xl mx-auto">
+            Daily safety reminders to keep your workplace safe and healthy
           </p>
         </div>
       </section>
 
       {/* Controls Section */}
-      <section className="py-12 px-4 border-b bg-card/50">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-6 items-end">
+      <section className="py-4 px-4 border-b bg-card/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-3 items-end">
             {/* Category Filter */}
             <div className="flex-1">
-              <label className="block text-sm font-medium text-foreground mb-2">
-                <Filter className="inline h-4 w-4 mr-1" />
-                Filter by Category
+              <label className="block text-xs font-medium text-foreground mb-1">
+                <Filter className="inline h-3 w-3 mr-1" />
+                Category
               </label>
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger>
+                <SelectTrigger className="h-9">
                   <SelectValue placeholder="All Categories" />
                 </SelectTrigger>
                 <SelectContent>
@@ -87,11 +87,11 @@ const Index = () => {
 
             {/* Topic Selection */}
             <div className="flex-1">
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Select Specific Topic (Optional)
+              <label className="block text-xs font-medium text-foreground mb-1">
+                Specific Topic
               </label>
               <Select value={selectedTopicId} onValueChange={setSelectedTopicId}>
-                <SelectTrigger>
+                <SelectTrigger className="h-9">
                   <SelectValue placeholder="Random Topic" />
                 </SelectTrigger>
                 <SelectContent>
@@ -108,16 +108,15 @@ const Index = () => {
             {/* Generate Button */}
             <Button 
               onClick={generateFlashMemo} 
-              size="lg" 
-              className="md:min-w-[200px] gap-2 h-11"
+              className="md:min-w-[180px] gap-2 h-9"
             >
-              <Sparkles className="h-5 w-5" />
-              Generate Flash Memo
+              <Sparkles className="h-4 w-4" />
+              Generate
             </Button>
           </div>
 
           {/* Info Text */}
-          <div className="mt-6 text-center text-sm text-muted-foreground">
+          <div className="mt-2 text-center text-xs text-muted-foreground">
             <p>
               {selectedTopicId !== "random" 
                 ? "You've selected a specific topic" 
@@ -130,37 +129,28 @@ const Index = () => {
       </section>
 
       {/* Flash Memo Display */}
-      <section className="py-12 px-4">
+      <section className="py-4 px-4">
         {currentTopic ? (
           <FlashMemoCard topic={currentTopic} />
         ) : (
-          <div className="max-w-5xl mx-auto text-center py-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
-              <Sparkles className="h-10 w-10 text-primary" />
+          <div className="max-w-6xl mx-auto text-center py-8">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
+              <Sparkles className="h-6 w-6 text-primary" />
             </div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">
+            <h2 className="text-lg font-semibold text-foreground mb-2">
               No Flash Memo Generated Yet
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              Click the "Generate Flash Memo" button above to create your daily safety reminder.
+            <p className="text-xs text-muted-foreground">
+              Click "Generate" to create your daily safety reminder
             </p>
-            <Button onClick={generateFlashMemo} size="lg" className="gap-2">
-              <Sparkles className="h-5 w-5" />
-              Generate Your First Flash Memo
-            </Button>
           </div>
         )}
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-8 px-4 mt-12">
-        <div className="max-w-5xl mx-auto text-center text-sm text-muted-foreground">
-          <p>
-            HSE Flash Memo Generator • Promoting workplace safety and mental health awareness
-          </p>
-          <p className="mt-2">
-            Topics cover safety at work, stress management, anxiety, and depression prevention
-          </p>
+      <footer className="border-t py-3 px-4">
+        <div className="max-w-6xl mx-auto text-center text-xs text-muted-foreground">
+          <p>HSE Flash Memo Generator • Workplace Safety & Mental Health Awareness</p>
         </div>
       </footer>
     </div>

@@ -150,58 +150,58 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
   };
 
   return (
-    <div ref={printRef} className="w-full max-w-5xl mx-auto">
-      <Card className="p-8 shadow-elevated">
+    <div ref={printRef} className="w-full max-w-6xl mx-auto">
+      <Card className="p-4 shadow-elevated">
         {/* Header */}
-        <div className="flex items-start justify-between mb-6">
+        <div className="flex items-start justify-between mb-3">
           <div>
-            <Badge variant={getCategoryBadgeVariant(topic.categoryId)} className="mb-3">
+            <Badge variant={getCategoryBadgeVariant(topic.categoryId)} className="mb-2 text-xs">
               {topic.category}
             </Badge>
-            <h1 className="text-4xl font-bold text-foreground mb-2">{topic.title}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">{topic.title}</h1>
           </div>
-          <Button onClick={handlePrint} variant="outline" size="lg" className="gap-2">
-            <Printer className="h-5 w-5" />
-            Print PDF
+          <Button onClick={handlePrint} variant="outline" size="sm" className="gap-2">
+            <Printer className="h-4 w-4" />
+            Print
           </Button>
         </div>
 
         {/* Description Section */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-primary mb-3">What is the Risk?</h2>
-          <p className="text-foreground leading-relaxed">{topic.description}</p>
+        <div className="mb-3">
+          <h2 className="text-base font-semibold text-primary mb-1">What is the Risk?</h2>
+          <p className="text-sm text-foreground leading-relaxed">{topic.description}</p>
         </div>
 
         {/* Examples Section */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-primary mb-4">Examples</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="mb-3">
+          <h2 className="text-base font-semibold text-primary mb-2">Examples</h2>
+          <div className="grid md:grid-cols-2 gap-3">
             {/* OK Example */}
-            <div className="space-y-3">
+            <div>
               <div className="relative rounded-lg overflow-hidden border-2 border-success shadow-card">
                 <img 
                   src={topic.okImage} 
                   alt="Correct safety practice example" 
-                  className="w-full h-64 object-cover"
+                  className="w-full h-40 object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-success text-success-foreground px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5" />
-                  CORRECT PRACTICE
+                <div className="absolute top-2 left-2 bg-success text-success-foreground px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
+                  <CheckCircle className="h-3 w-3" />
+                  CORRECT
                 </div>
               </div>
             </div>
 
             {/* NOK Example */}
-            <div className="space-y-3">
+            <div>
               <div className="relative rounded-lg overflow-hidden border-2 border-destructive shadow-card">
                 <img 
                   src={topic.nokImage} 
                   alt="Incorrect safety practice example" 
-                  className="w-full h-64 object-cover"
+                  className="w-full h-40 object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
-                  <XCircle className="h-5 w-5" />
-                  UNSAFE PRACTICE
+                <div className="absolute top-2 left-2 bg-destructive text-destructive-foreground px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
+                  <XCircle className="h-3 w-3" />
+                  UNSAFE
                 </div>
               </div>
             </div>
@@ -209,27 +209,27 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
         </div>
 
         {/* Safety Advice Section */}
-        <div className="mb-8 bg-muted/50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-primary mb-3">Safety Advice</h2>
-          <p className="text-foreground leading-relaxed">{topic.advice}</p>
+        <div className="mb-3 bg-muted/50 p-3 rounded-lg">
+          <h2 className="text-base font-semibold text-primary mb-1">Safety Advice</h2>
+          <p className="text-sm text-foreground leading-relaxed">{topic.advice}</p>
         </div>
 
         {/* Video Resource */}
-        <div className="border-t pt-6">
-          <h2 className="text-xl font-semibold text-primary mb-3">Learn More</h2>
+        <div className="border-t pt-3">
+          <h2 className="text-base font-semibold text-primary mb-2">Learn More</h2>
           <a
             href={topic.videoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+            className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-medium"
           >
-            <ExternalLink className="h-5 w-5" />
-            Watch educational video on this topic
+            <ExternalLink className="h-4 w-4" />
+            Watch educational video
           </a>
         </div>
 
         {/* Footer */}
-        <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-3 pt-3 border-t text-center text-xs text-muted-foreground">
           <p>Generated on {new Date().toLocaleDateString()}</p>
         </div>
       </Card>
