@@ -54,9 +54,6 @@ const Index = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
             HSE Flash Memo Generator
           </h1>
-          <p className="text-sm text-primary-foreground/90 max-w-2xl mx-auto">
-            Daily safety reminders to keep your workplace safe and healthy
-          </p>
         </div>
       </section>
 

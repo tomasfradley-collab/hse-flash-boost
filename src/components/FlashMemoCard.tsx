@@ -182,7 +182,7 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
                 <img 
                   src={topic.okImage} 
                   alt="Correct safety practice example" 
-                  className="w-full h-40 object-cover"
+                  className="w-full h-64 object-cover"
                 />
                 <div className="absolute top-2 left-2 bg-success text-success-foreground px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
                   <CheckCircle className="h-3 w-3" />
@@ -197,7 +197,7 @@ const FlashMemoCard = ({ topic }: FlashMemoCardProps) => {
                 <img 
                   src={topic.nokImage} 
                   alt="Incorrect safety practice example" 
-                  className="w-full h-40 object-cover"
+                  className="w-full h-64 object-cover"
                 />
                 <div className="absolute top-2 left-2 bg-destructive text-destructive-foreground px-2 py-1 rounded text-xs font-semibold flex items-center gap-1">
                   <XCircle className="h-3 w-3" />
